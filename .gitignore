@@ -1,0 +1,11 @@
+# personal settings and secrets - never commit
+config.ini
+router_pw
+*.log
+.dnsguard/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/

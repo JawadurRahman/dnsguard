@@ -1,0 +1,20 @@
+[Unit]
+Description=dnsguard - keep NextDNS enforced on the Giga Hub
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=dnsguard
+Group=dnsguard
+ExecStart=/opt/dnsguard/venv/bin/python /opt/dnsguard/dnsguard.py --loop
+Restart=always
+RestartSec=10
+# light hardening; the script only needs its own home dir
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/dnsguard
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
