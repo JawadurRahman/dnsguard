@@ -75,3 +75,7 @@ journalctl -u dnsguard -f
 5. **No loop when healthy:** if it logs `router already set to NextDNS; check fails for
    another reason`, the router is fine. Look at this machine's DNS, the router's IPv6 DNS,
    or your NextDNS linked IP.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
